@@ -1,0 +1,26 @@
+What is CHOMP?
+
+CHOMP is a Higher-Order Messaging library for Cocoa on Mac OS X. It aims to be a robust, complete implementation of HOM that depends on nothing outside of Cocoa.
+
+
+What is Higher-Order Messaging?
+
+HOM is a technique for writing Objective-C methods which take entire messages as their arguments. It can often be used as a more flexible and easier to use replacement for methods which take selectors. For example, in plain Cocoa, if you had an array of objects and you wanted to send -step to each one, you'd write something like this:
+
+[array makeObjectsPerformSelector:@selector(step)];
+
+With HOM, you can write this:
+
+[[array do] step];
+
+HOM also allows much more, including simultaneous iteration over several arrays and mapping of return values into a new collection. HOM can also be used for other methods that don't involve iteration. See the Documentation.html file for more information on how to use CHOMP.
+
+
+Why CHOMP?
+
+HOM is an old idea in the Cocoa world, but all existing HOM implementations are either small pieces of a larger framework, or are incomplete. CHOMP aims to be a complete HOM implementation that doesn't have any extra baggage.
+
+
+How do I use it with my application?
+
+By default, the CHOMP project will build a framework that's fit for embedding inside a Cocoa application. You can create a Copy Files build phase to put Chomp.framework inside the Frameworks folder of your application, #import <Chomp/Chomp.h>, and you're ready to go.

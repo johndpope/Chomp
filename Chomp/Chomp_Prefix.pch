@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Chomp' target in the 'Chomp' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

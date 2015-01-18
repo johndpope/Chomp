@@ -5,20 +5,20 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Chomp</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>Chomp Test</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.sf.chomp-mac</string>
+	<string>net.sf.chomp-mac.chomptest</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
+	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>NSApplication</string>
 </dict>
 </plist>

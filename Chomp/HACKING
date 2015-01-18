@@ -1,0 +1,32 @@
+This document gives an overview of how CHOMP works and how to extend it. CHOMP is designed to be easy to extend with new HOMs.
+
+
+Design Goals
+
+CHOMP was designed with three goals: simplicity, extensibility, and portability. If you intend to contribute code back to the project, please keep these three goals in mind.
+
+Note that "speed" is not on the list of goals. Slow software is bad, but speed is a distant concern compared to the above three. Any optimization which compromises simplicity, extensibility, and portability does not belong in CHOMP.
+
+One unfortunate consequence of these goals is that certain HOMs become difficult or impossible to implement. The classic filter messages, -select and -reject, cannot be implemented in a simple, portable manner because the messages given to them typically return BOOL, but the HOM needs to return an object. This could be at least partially rectified by writing filter messages which only act on mutable containers and don't return anything, but this is less than ideal.
+
+
+How CHOMP Works
+
+HOMs are implemented by having the HOM message itself return a "trampoline", which is an instance of a subclass of NSProxy. The trampoline overrides forwardInvocation:, traps the HOM's argument message, and then does whatever it needs to do. The iteration HOMs will repeatedly send the invocation to the members of a collection, for example.
+
+In addition to the trampolines, the HOMs themselves are implemented in categories on various Cocoa objects, typically either NSObject or the collections classes. These are usually one-line methods that simply return a trampoline.
+
+
+Commonalities in HOMs
+
+All Higher-Order Messages share a few common things. They need to capture an invocation, and then perform some action on the original message's target. These commonalities are captured in the CHOMPTrampoline class. this class is initialized with a selector and a target. When an unrecognized message is sent to it (nearly any message will be unrecognized), it traps the invocation, and then invokes the selector on itself. A subclass will implement one or several methods to do something interesting with the invocation and the target.
+
+
+Simple HOMs
+
+The basic HOMs which don't do iteration are handled by CHOMPSimpleTrampoline. This class adds the ability to carry arbitrary user data, and it then implements messages necessary to the various simple HOMs. Additional non-iteration HOMs can probably be implemented via a category on NSObject plus an additional action method on CHOMPSimpleTrampoline.
+
+
+Iterative HOMs
+
+Iterative HOMs are handled by CHOMPEnumeratorTrampoline. This trampoline implements enough to allow the creation of the -do HOM, and it provides plenty of hooks for subclasses to modify its behavior. It handles all of the basic iteration constructs, including iteration over the target and arguments. Subclasses can override one or more of the methods that this class calls to provide additional behavior. For example, the CHOMPEnumeratorCollectTrampoline subclass provides additional behavior necessary to implement the -collect HOM. Additional iterative HOMs should be implemented in this class hierarchy.
