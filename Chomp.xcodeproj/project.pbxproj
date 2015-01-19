@@ -20,7 +20,6 @@
 		5D40D8BB1A6CACC500252285 /* NSCollections+CHOMPIteration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD50E191A6BB3150012B2A1 /* NSCollections+CHOMPIteration.m */; };
 		5D40D8BC1A6CACC700252285 /* NSObject+CHOMPHOM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD50E1B1A6BB3150012B2A1 /* NSObject+CHOMPHOM.m */; };
 		5D40D8BD1A6CACC900252285 /* NSObject+CHOMPIteration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD50E1D1A6BB3150012B2A1 /* NSObject+CHOMPIteration.m */; };
-		5DD50DAD1A6BA7C50012B2A1 /* Chomp.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD50DAC1A6BA7C50012B2A1 /* Chomp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DD50DB31A6BA7C50012B2A1 /* Chomp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD50DA71A6BA7C50012B2A1 /* Chomp.framework */; };
 		5DD50DBA1A6BA7C50012B2A1 /* ChompTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD50DB91A6BA7C50012B2A1 /* ChompTests.m */; };
 		5DD50E211A6BB3150012B2A1 /* Chomp Test-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DD50E031A6BB3150012B2A1 /* Chomp Test-Info.plist */; };
@@ -70,7 +69,6 @@
 		5D40D8AA1A6CAC6F00252285 /* ChompIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChompIOSTests.m; sourceTree = "<group>"; };
 		5DD50DA71A6BA7C50012B2A1 /* Chomp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chomp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD50DAB1A6BA7C50012B2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5DD50DAC1A6BA7C50012B2A1 /* Chomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chomp.h; sourceTree = "<group>"; };
 		5DD50DB21A6BA7C50012B2A1 /* ChompTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChompTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD50DB81A6BA7C50012B2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DD50DB91A6BA7C50012B2A1 /* ChompTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChompTests.m; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				5DD50E1D1A6BB3150012B2A1 /* NSObject+CHOMPIteration.m */,
 				5DD50E1F1A6BB3150012B2A1 /* TestApp.m */,
 				5DD50E201A6BB3150012B2A1 /* version.plist */,
-				5DD50DAC1A6BA7C50012B2A1 /* Chomp.h */,
 				5DD50DAA1A6BA7C50012B2A1 /* Supporting Files */,
 			);
 			path = Chomp;
@@ -277,7 +274,6 @@
 				5DD50E381A6BB3150012B2A1 /* NSObject+CHOMPIteration.h in Headers */,
 				5DD50E361A6BB3150012B2A1 /* NSObject+CHOMPHOM.h in Headers */,
 				5DD50E341A6BB3150012B2A1 /* NSCollections+CHOMPIteration.h in Headers */,
-				5DD50DAD1A6BA7C50012B2A1 /* Chomp.h in Headers */,
 				5DD50E241A6BB3150012B2A1 /* CHOMPEnumeratorCollectTrampoline.h in Headers */,
 				5DD50E281A6BB3150012B2A1 /* CHOMPSimpleTrampoline.h in Headers */,
 				5DD50E221A6BB3150012B2A1 /* Chomp_Prefix.pch in Headers */,
