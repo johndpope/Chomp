@@ -10,37 +10,34 @@
 
 @implementation CHOMPEnumeratorCollectTrampoline
 
-- (void)prepareWithInvocation:(NSInvocation *)invocation
-{
-	if([target isKindOfClass:[NSSet class]])
-		returnCollection = [[NSMutableSet alloc] init];
-	else
-		returnCollection = [[NSMutableArray alloc] init];
+- (void)prepareWithInvocation:(NSInvocation *)invocation {
+    if ([target isKindOfClass:[NSSet class]])
+        returnCollection = [[NSMutableSet alloc] init];
+    else
+        returnCollection = [[NSMutableArray alloc] init];
 }
 
 - (void)processReturnValue:retVal
 {
-	if(!retVal)
-		retVal = [NSNull null];
-	[returnCollection addObject:retVal];
+    if (!retVal)
+        retVal = [NSNull null];
+    [returnCollection addObject:retVal];
 }
 
 - getReturnValue
 {
-	return returnCollection;
+    return returnCollection;
 }
 
-- (void)finalizeWithInvocation:(NSInvocation *)invocation
-{
-	// autorelease because we're returning it and it can't disappear right away
-	[returnCollection autorelease];
-	returnCollection = nil;
+- (void)finalizeWithInvocation:(NSInvocation *)invocation {
+    // autorelease because we're returning it and it can't disappear right away
+    [returnCollection autorelease];
+    returnCollection = nil;
 }
 
-- (void)dealloc
-{
-	[returnCollection release];
-	[super dealloc];
+- (void)dealloc {
+    [returnCollection release];
+    [super dealloc];
 }
 
 @end

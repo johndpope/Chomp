@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ChompIOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5D40D8981A6CAC6F00252285</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D40D8A21A6CAC6F00252285</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5DD50DA61A6BA7C50012B2A1</key>
 		<dict>
 			<key>primary</key>
